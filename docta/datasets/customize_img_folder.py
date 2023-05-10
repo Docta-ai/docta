@@ -12,18 +12,10 @@ class Customize_Image_Folder(datasets.ImageFolder):
         self.target_transform = target_transform
         # Get features
         feature_all = []
-        if transform is None:
-            self.transform = transforms.Compose([
-                transforms.Resize(256),
-                transforms.CenterCrop(224),
-                transforms.ToTensor(),
-                transforms.Normalize((0.6959, 0.6537, 0.6371), (0.3113, 0.3192, 0.3214)),
-            ])
-        else:
-            self.transform = transform
+        self.transform = transform
         for i in range(len(self.targets_all)):
             tmp_feature, _ = self.__getitem__(i)
-            feature_all.append(tmp_feature.permute(1, 2, 0).numpy().astype(np.uint8))  # require that the last dimension is the # of channels
+            feature_all.append(np.asarray(tmp_feature))
         self.feature = np.array(feature_all)
         # Get labels
         self.label = self.targets_all
