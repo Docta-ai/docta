@@ -8,7 +8,7 @@ Your data may be unhealthy, resulting in unsatisfactory model performance.
 <!-- ![Docta_teaser](./fig/docta_teaser.png "Service From Docta") -->
 <!-- <img src="./fig/Docta-teaser.png" width="80%" /> -->
 
-## **How healthy is your data? Let's Docta it!**
+## **How healthy is your data? Let Docta treat it!**
 
 Docta is an advanced data-centric AI platform that offers a comprehensive range of services aimed at detecting and rectifying issues in your data. With Docta, you can effortlessly cure your data.
 
