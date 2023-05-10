@@ -23,7 +23,7 @@ Docta supports a broader range of data, including
 
 Docta aims to provide various automatic service to make your data healthy, including but not limited to data diagnosis, curation, and nutrition. The open-source tool requires no training, making it a premium-free option that can operate on any user's data without additional prerequisites. In this open-source version, we demo the power of Docta in curing and strengthening your data by presenting three demos at `./demo/`. All the demos are "training-free."
 
-## Demo 1: Docta label errors (LLM alignment data)
+## Demo 1: Find label errors with Docta (LLM alignment data)
 
 ### Task: Fix human annotation errors for LLM responses:
 - Dataset: 
@@ -103,8 +103,8 @@ sample_red_team = {
     }
 ```
 
-### Docta your LLM alignment data
-Docta your LLM alignment data within one click! Here is one example on [anthropics/hh-rlhf](https://github.com/anthropics/hh-rlhf):
+### Doctor for your LLM alignment data
+Use Docta to diagnose and cure your LLM alignment data within one click! Here is one example on [anthropics/hh-rlhf](https://github.com/anthropics/hh-rlhf):
 ```shell
 # Please make sure the dataset has been downloaded and saved to data_root
 bash ./tools/docta_rlhf.sh
@@ -116,14 +116,14 @@ bash ./tools/docta_rlhf.sh
 
 See sampled results of [anthropics/hh-rlhf](https://github.com/anthropics/hh-rlhf) [here](data/hh-rlhf-docta) and sampled results of [MOSS](https://huggingface.co/datasets/fnlp/moss-002-sft-data) harmlessness data [here](data/MOSS-docta/en_harmless_sampled.log)
 
-Please fill in this [form](https://forms.gle/GftCbp8QLKRrb1eh6) if you need the full docta-ed version.
+Please fill in this [form](https://forms.gle/GftCbp8QLKRrb1eh6) if you need the full version treated by Docta.
 
-## Demo 2: Docta label errors (Image data with real-world human annotations)
+## Demo 2: Find label errors (Image data with real-world human annotations)
 
 We show a demo on [CIFAR-N](https://github.com/UCSC-REAL/cifar-10-100n), CIFAR with re-collected real-world human annotations. See the demo [here](demo/docta_cifar10.ipynb).
 
 
-## Demo 3: Docta rare patterns (Real-world image data)
+## Demo 3: Find rare patterns (Real-world image data)
 
 Docta is capable of detecting rare patterns (i.e., patterns/features that have a low-frequency in the data), much like detecting largely ignored types of vitamin that could enhance human health. Docta can actively gather and improve your data by collecting these rare patterns.
 
