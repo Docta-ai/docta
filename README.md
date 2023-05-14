@@ -51,15 +51,25 @@ Here is a summary of key steps to diagnose the RLHF data.
 ```python
 from docta.utils.config import Config
 from docta.datasets import HH_RLHF
-cfg = Config.fromfile(args.config) # Download the data to data_root beforing running
+"""
+Note: 
+1. Please set data_root in the config file appropriately.
+2. Download the data to data_root beforing running
+"""
+cfg = Config.fromfile(args.config) 
 dataset = HH_RLHF(cfg, train=True)
 ```
 #### Step 2: Extract Embedding
 
 ```python
 from docta.core.preprocess import Preprocess
+"""
+Note: 
+1. Strongly recommend to use a GPU to encode features.
+2. The embedding will be automatically saved by running pre_processor.encode_feature()
+"""
 pre_processor = Preprocess(cfg, dataset)
-pre_processor.encode_feature() # the embedding will be automatically saved
+pre_processor.encode_feature()
 
 # load embedding
 data_path = lambda x: cfg.save_path + f'embedded_{cfg.dataset_type}_{x}.pt'
@@ -73,7 +83,7 @@ from docta.apis import DetectLabel
 from docta.core.report import Report
 # Initialize report
 report = Report() 
-# Detect human annotation errors
+# Detect human annotation errors. You can do this with only CPU.
 detector = DetectLabel(cfg, dataset, report = report)
 detector.detect()
 # Save report
