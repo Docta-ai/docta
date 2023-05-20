@@ -27,7 +27,7 @@ Docta aims to provide various automatic service to make your data healthy, inclu
 
 ### Task: Fix human annotation errors for LLM responses:
 - Dataset: 
-  - Red teaming data from Anthropics https://github.com/anthropics/hh-rlhf
+  - Red teaming data from Anthropic https://github.com/anthropics/hh-rlhf
 - Feature: 
   - Conversation between human adversary and AI assistant
   - Goal: Attack (red team) AI assistant by asking questions
@@ -94,7 +94,7 @@ torch.save(report, report_path)
 
 ### Sampled output:
 
-The following instance is a sampled cured result from ``Anthropics/hh-RLHF/red-team-attempts``. In this instance, Molotov cocktail is a *hand-thrown incendiary weapon*. The response is severely harmful because AI assistant is trying to teach human to make weapons.
+The following instance is a sampled cured result from ``anthropics/hh-RLHF/red-team-attempts``. In this instance, Molotov cocktail is a *hand-thrown incendiary weapon*. The response is severely harmful because AI assistant is trying to teach human to make weapons.
  Docta cures data by adding `suggest_rating` to each instance.
 
 ```python
