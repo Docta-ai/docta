@@ -197,7 +197,7 @@ def estimator_hoc(cfg, dataset):
     sample_size = int(len(dataset) * 0.9)
 
     if cfg.hoc_cfg is not None and cfg.hoc_cfg.sample_size:
-        sample_size = np.min((cfg.hoc_cfg.sample_size, int(len(dataset)*0.9)))
+        sample_size = np.min((cfg.hoc_cfg.sample_size, sample_size))
 
     for idx in tqdm(range(cfg.hoc_cfg.num_rounds)):
         if cfg.details:
@@ -214,7 +214,7 @@ def estimator_hoc(cfg, dataset):
                 dataset.consensus_patterns, list) else dataset.consensus_patterns[sample]
         cnt_y_3 = consensus_counts(cfg, consensus_patterns_sample)
         for i in range(3):
-            cnt_y_3[i] /= cfg.hoc_cfg.sample_size
+            cnt_y_3[i] /= sample_size
             c_est[i] = c_est[i] + cnt_y_3[i] if idx != 0 else cnt_y_3[i]
 
     print('Estimating consensus patterns... [Done]')
@@ -222,7 +222,7 @@ def estimator_hoc(cfg, dataset):
     for j in range(3):
         c_est[j] = c_est[j] / cfg.hoc_cfg.num_rounds
 
-    loss_min, T_est, p_est, T_est_before_sfmx = calc_func(cfg, c_est)
+    _, T_est, p_est, T_est_before_sfmx = calc_func(cfg, c_est)
 
     T_est = T_est.cpu().numpy()
     T_est_before_sfmx = T_est_before_sfmx.cpu().numpy()
