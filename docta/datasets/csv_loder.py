@@ -16,20 +16,18 @@ class TabularDataset(object):
     def preprocess_csv(self, normalize=True):
         """
         This function servers to preporcess your dataset for docta use.
-        As an example, we take an UCI dataset for illustration below:
         The code below will do some basic cleaning stuff, then return you the features and the labels.
         Note: this preprocess function is case by case, so please update/revise accoridngly for your personal use.
+        Reference:
+        Docta will automatically view the column "target" as labels of samples;
+        Remaining columns will be the features of samples.
         """
-        self.df.replace({'M': 1, 'B': 0}, inplace=True)
-        self.df.rename(columns={'diagnosis': 'target'}, inplace=True)
-        self.df.drop(['id', 'Unnamed: 32'], axis=1, inplace=True)
         self.feature = self.df.drop(['target'], axis=1).values
         self.label = self.df.target.values
         sc = StandardScaler()
         if normalize:
             self.feature = sc.fit_transform(self.feature)
         return self.feature, self.label
-
 
     def __getitem__(self, index):
         idx = self.index[index]

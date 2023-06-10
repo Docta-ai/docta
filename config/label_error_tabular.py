@@ -3,7 +3,7 @@ seed = 0
 dataset_type = 'Tabular'
 modality = 'tabular' # image, text, tabular
 num_classes = 2
-data_root = './demo_imgs/breast.csv'
+data_root = './demo_imgs/noisy_tabular/noisy_twonorm.csv'
 file_name = 'train'
 save_path = f'./results/{dataset_type}/'
 dataset_path = save_path + f'dataset_{dataset_type}.pt'
@@ -53,7 +53,7 @@ hoc_cfg = dict(
     p0 = None, 
     lr = 0.1, 
     num_rounds = 50, 
-    sample_size = 400,
+    sample_size = 35000,
     already_2nn = False,
     device = 'cpu'
 )
@@ -61,7 +61,7 @@ hoc_cfg = dict(
 
 detect_cfg = dict(
     num_epoch = 51,
-    sample_size = 400,
+    sample_size = 35000,
     k = 10,
     name = 'simifeat',
     method = 'rank'
