@@ -139,6 +139,11 @@ Docta is capable of detecting rare patterns (i.e., patterns/features that have a
 
 See a demo on detecting rare patterns appeared in [CIFAR-10](demo/docta_rare_pattern_cifar10.ipynb) and [Clothes](demo/docta_rare_pattern_clothes.ipynb) datasets.
 
+
+## Demo 4: Using Docta to diagnose tabular data
+
+We include a demo on detecting label errors and rare patterns for a tabular data with noisy labels/targets [[demo]](demo/docta_tabular.ipynb).
+
 ## Contact:
 
 For more information and functions that Docta provides, please email to [contact@docta.ai](mailto:contact@docta.ai).
