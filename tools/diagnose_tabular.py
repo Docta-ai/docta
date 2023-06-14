@@ -5,7 +5,7 @@ sys.path.append(o_path) # set path so that modules from other foloders can be lo
 
 import torch
 import argparse
-
+import numpy as np
 from docta.utils.config import Config
 from docta.datasets import TabularDataset
 
@@ -28,6 +28,7 @@ cfg.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 dataset = TabularDataset(root_path=cfg.data_root)
+cfg.num_classes = len(np.unique(dataset.label))
 test_dataset = None
 print('Tabular-data load finished')
 

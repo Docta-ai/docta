@@ -2,8 +2,7 @@
 seed = 0
 dataset_type = 'Tabular'
 modality = 'tabular' # image, text, tabular
-num_classes = 2
-data_root = './demo_imgs/noisy_tabular/noisy_twonorm.csv'
+data_root = './demo_imgs/noisy_tabular/noisy_Iris.csv'
 file_name = 'train'
 save_path = f'./results/{dataset_type}/'
 dataset_path = save_path + f'dataset_{dataset_type}.pt'
@@ -12,39 +11,7 @@ save_path = f'./results/{dataset_type}/label_error_'
 
 feature_type = 'embedding' 
 
-embedding_model = 'hf-hub:laion/CLIP-ViT-H-14-laion2B-s32B-b79K'
-embedding_cfg = dict(
-    save_num = 50,
-    shuffle = False,
-    batch_size = 1024,
-    num_workers = 1,
-)
-
-
-accuracy = dict(topk = 1, threth = 0.5)
-n_epoch = 10
-print_freq = 390
 details = False
-
-train_cfg = dict(
-    shuffle = True,
-    batch_size = 128,
-    num_workers = 1,
-)
-
-test_cfg = dict(
-    shuffle = False,
-    batch_size = 128,
-    num_workers = 1,
-)
-
-
-optimizer = dict(
-    name = 'SGD',
-    config = dict(
-        lr = 0.1    
-    )
-)
 
 
 hoc_cfg = dict(
