@@ -2,8 +2,8 @@
 seed = 0
 dataset_type = 'Tabular'
 modality = 'tabular' # image, text, tabular
-num_classes = 2
-data_root = './demo_imgs/noisy_tabular/noisy_twonorm.csv'
+num_classes = 3
+data_root = './demo_imgs/noisy_tabular/noisy_Iris.csv'
 file_name = None
 save_path = f'./results/{dataset_type}/'
 dataset_path = save_path + f'dataset_{dataset_type}.pt'
