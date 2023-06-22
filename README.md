@@ -21,7 +21,7 @@ Docta supports a broader range of data, including
 
 ## Open-Source
 
-Docta aims to provide various automatic service to make your data healthy, including but not limited to data diagnosis, curation, and nutrition. The open-source tool requires no training, making it a premium-free option that can operate on any user's data without additional prerequisites. In this open-source version, we demo the power of Docta in curing and strengthening your data by presenting three demos at `./demo/`. All the demos are "training-free."
+Docta aims to provide various automatic service to make your data healthy, including but not limited to data diagnosis, curation, and nutrition. The open-source tool requires no training, making it a premium-free option that can operate on any user's data without additional prerequisites. In this open-source version, we demo the power of Docta in curing and strengthening your data by presenting four demos at `./demo/`. All the demos are "training-free."
 
 ## Demo 1: Find label errors with Docta (LLM alignment data)
 
@@ -142,7 +142,7 @@ See a demo on detecting rare patterns appeared in [CIFAR-10](demo/docta_rare_pat
 
 ## Demo 4: Using Docta to diagnose tabular data
 
-We include a demo on detecting label errors and rare patterns for a tabular data with noisy labels/targets [[demo]](demo/docta_tabular.ipynb).
+We include a demo on detecting label errors and rare patterns for a tabular data with noisy labels/targets [[demo]](demo/docta_tabular.ipynb). You may want to explore this tabular data demo on [Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1t93XXrNq3-SivL2gvR3Np8ZFcx8yupwv?usp=sharing).
 
 ## Contact:
 
