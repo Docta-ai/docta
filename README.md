@@ -142,7 +142,7 @@ See a demo on detecting rare patterns appeared in [CIFAR-10](demo/docta_rare_pat
 
 ## Demo 4: Using Docta to diagnose tabular data
 
-We include a demo on detecting label errors and rare patterns for a tabular data with noisy labels/targets [[demo]](demo/docta_tabular.ipynb). You may want to explore this tabular data demo on [Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1t93XXrNq3-SivL2gvR3Np8ZFcx8yupwv?usp=sharing).
+We include a demo on detecting label errors and rare patterns for a tabular data with noisy labels/targets [[demo]](demo/docta_tabular.ipynb). You may want to explore this tabular data demo on [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1t93XXrNq3-SivL2gvR3Np8ZFcx8yupwv?usp=sharing).
 
 ## Contact:
 
