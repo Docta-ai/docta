@@ -1,7 +1,7 @@
 import sys
 import os
-o_path = os.getcwd()
-sys.path.append(o_path) # set path so that modules from other foloders can be loaded
+# o_path = os.getcwd()
+# sys.path.append(o_path) # set path so that modules from other foloders can be loaded
 import pandas as pd
 import torch
 

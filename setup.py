@@ -20,7 +20,7 @@ REQUIREMENTS = _read_reqs("requirements.txt")
 
 exec(open('docta/version.py').read())
 setup(
-    name='docta',
+    name='docta.ai',
     version=__version__,
     description='Docta.ai',
     long_description=long_description,
@@ -50,8 +50,7 @@ setup(
 
     # Note that this is a string of words separated by whitespace, not a list.
     keywords='Data diagnosis, curation',
-    package_dir={'': 'docta'},
-    packages=find_packages(where='docta'),
+    packages=find_packages(),
     include_package_data=True,
     install_requires=REQUIREMENTS,
     python_requires='>=3.7',
