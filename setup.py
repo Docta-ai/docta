@@ -22,7 +22,7 @@ exec(open('docta/version.py').read())
 setup(
     name='docta',
     version=__version__,
-    description='OpenCLIP',
+    description='Docta.ai',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/Docta-ai/docta',
@@ -36,7 +36,7 @@ setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
-        'License :: CC BY-NC 4.0',
+        'License :: Other/Proprietary License',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
