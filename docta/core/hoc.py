@@ -13,16 +13,16 @@ smt = torch.nn.Softmax(dim=1)
 
 
 def consensus_analytical(cfg, T, P, mode):
-    r""" Compute the first-, second-, and third-order of concensus matrices.
+    r""" Compute the first-, second-, and third-order of consensus matrices.
     Args:
         cfg: configuration
         T : noise transition matrix
         P : the priors of P(Y = i), i \in [K]
         mode :
     Return:
-        c_analytical[0] : first-order concensus
-        c_analytical[1] : second-order concensus
-        c_analytical[2] : third-order concensus 
+        c_analytical[0] : first-order consensus
+        c_analytical[1] : second-order consensus
+        c_analytical[2] : third-order consensus 
     """
 
     KINDS = cfg.num_classes
@@ -64,7 +64,7 @@ def consensus_analytical(cfg, T, P, mode):
 
 
 def func(cfg, c_est, T_out, P_out):
-    """ Compute the loss of estimated concensus matrices
+    """ Compute the loss of estimated consensus matrices
     """
     hoc_cfg = cfg.hoc_cfg
     loss = torch.tensor(0.0).to(hoc_cfg.device)  # initialize the loss
@@ -80,7 +80,7 @@ def func(cfg, c_est, T_out, P_out):
     c_ana = consensus_analytical(
         cfg, T.to(hoc_cfg.device), P.to(hoc_cfg.device), mode)
 
-    # weight for differet orders of concensus patterns
+    # weight for differet orders of consensus patterns
     weight = [1.0, 1.0, 1.0]
 
     for j in range(3):  # || P1 || + || P2 || + || P3 ||
@@ -210,7 +210,7 @@ def estimator_hoc(cfg, dataset):
             consensus_patterns_sample, _ = get_consensus_patterns(
                 dataset, sample)
         else:
-            consensus_patterns_sample = torch.tensor(dataset.consensus_patterns[sample]) if isinstance(
+            consensus_patterns_sample = torch.tensor(dataset.consensus_patterns)[sample] if isinstance(
                 dataset.consensus_patterns, list) else dataset.consensus_patterns[sample]
         cnt_y_3 = consensus_counts(cfg, consensus_patterns_sample)
         for i in range(3):
