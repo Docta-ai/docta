@@ -8,3 +8,4 @@ data/cifar/cifar-10-batches-py/*
 data/cifar/cifar-100-python.tar.gz
 data/cifar/cifar-100-python/*
 test_cifar_N.py
+history/*
