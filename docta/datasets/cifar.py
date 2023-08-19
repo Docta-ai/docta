@@ -68,6 +68,31 @@ class Cifar10_noisy(CIFAR10):
         return img, label, index
 
 
+class Cifar10N(Cifar10_noisy):
+    
+    train_transform = transforms.Compose([
+        transforms.RandomCrop(32, padding=4),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+    ])
+
+    test_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+    ])
+
+    def __init__(self, cfg, train=True, preprocess=None, noisy_label_key=None, clean_label_key=None) -> None:
+        print(f"CIFAR-10N includes five sets of noisy labels: random_label1, random_label2, random_label3, aggre_label, worse_label.\nPlease set cfg.noisy_label_key to one of them.")
+        if preprocess is None:
+            preprocess = self.train_transform if train else self.test_transform
+        self.cfg = cfg
+        self.cfg.label_path = "./data/cifar/CIFAR-10_human.pt"
+        if noisy_label_key is not None:
+            self.cfg.noisy_label_key = noisy_label_key
+        if clean_label_key is not None:
+            self.cfg.clean_label_key = clean_label_key
+        super(Cifar10N, self).__init__(cfg, train, preprocess)
 
 class Cifar10_clean(CIFAR10):
     
@@ -160,3 +185,15 @@ class Cifar100_clean(Cifar10_clean):
         transforms.ToTensor(),
         transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)),
     ])
+
+
+class Cifar100N(Cifar100_noisy):
+
+    def __init__(self, cfg, train=True, preprocess=None) -> None:
+        if preprocess is None:
+            preprocess = self.train_transform if train else self.test_transform
+        self.cfg = cfg
+        self.cfg.label_path = "./data/cifar/CIFAR-100_human.pt"
+        self.cfg.noisy_label_key = "noisy_label"
+        self.cfg.clean_label_key = "clean_label"
+        super(Cifar100N, self).__init__(cfg, train, preprocess)

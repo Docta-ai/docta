@@ -3,3 +3,8 @@ dist
 docta.ai.egg-info
 *.pyc
 results/Tabular_train/label_error_Tabular_train_diagnose_report.pt
+data/cifar/cifar-10-python.tar.gz
+data/cifar/cifar-10-batches-py/*
+data/cifar/cifar-100-python.tar.gz
+data/cifar/cifar-100-python/*
+test_cifar_N.py
