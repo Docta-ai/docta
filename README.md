@@ -10,6 +10,10 @@ Your data may be unhealthy, resulting in unsatisfactory model performance.
 
 ## **How healthy is your data? Let Docta treat it!**
 
+```bash
+pip install docta.ai
+```
+
 Docta is an advanced data-centric AI platform that offers a comprehensive range of services aimed at detecting and rectifying issues in your data. With Docta, you can effortlessly cure your data.
 
 Docta supports a broader range of data, including 
