@@ -27,7 +27,7 @@ print(pre_processor.save_ckpt_idx)
 
 
 data_path = lambda x: cfg.save_path + f'embedded_{cfg.dataset_type}_{x}.pt'
-dataset, _ = load_embedding(pre_processor.save_ckpt_idx, data_path, duplicate=True)
+dataset, _ = load_embedding(pre_processor.save_ckpt_idx, data_path, duplicate=False) # change it to duplicate=true may improve the performance
 
 # initialize report
 report = Report()
