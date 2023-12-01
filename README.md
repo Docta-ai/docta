@@ -2,6 +2,7 @@
 
 # Docta: A Doctor for your Data &emsp;  <img src="./fig/Docta-logo.png" width="20%" />
 
+**License: Creative Commons Attribution-NonCommercial 4.0. For commercial use, please contact <contact@docta.ai>.**
 
 Your data may be unhealthy, resulting in unsatisfactory model performance.
 
