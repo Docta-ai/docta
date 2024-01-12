@@ -156,3 +156,16 @@ We include a demo on detecting label errors and rare patterns for a tabular data
 ## Contact:
 
 For more information and functions that Docta provides, please email to [contact@docta.ai](mailto:contact@docta.ai).
+
+## Citation
+
+If you use Docta in your paper, please cite:
+
+```
+@article{zhu2023unmasking,
+  title={Unmasking and Improving Data Credibility: A Study with Datasets for Training Harmless Language Models},
+  author={Zhu, Zhaowei and Wang, Jialu and Cheng, Hao and Liu, Yang},
+  journal={arXiv preprint arXiv:2311.11202},
+  year={2023}
+}
+```
