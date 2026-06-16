@@ -123,7 +123,7 @@ sample_red_team = {
 ```
 
 ### Doctor for your LLM alignment data
-Use Docta to diagnose and cure your LLM alignment data within one click! Here is one example on [anthropics/hh-rlhf](https://github.com/anthropics/hh-rlhf):
+Use Docta to diagnose and cure your LLM alignment data within one click! Here are examples on [anthropics/hh-rlhf](https://github.com/anthropics/hh-rlhf):
 ```shell
 # Please make sure the dataset has been downloaded and saved to data_root
 bash ./tools/docta_rlhf.sh
