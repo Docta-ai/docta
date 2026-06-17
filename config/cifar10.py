@@ -26,7 +26,7 @@ embedding_cfg = dict(
 )
 
 
-accuracy = dict(topk = 1, threth = 0.5)
+accuracy = dict(topk = 1, thresh = 0.5)
 n_epoch = 10
 print_freq = 390
 details = False
