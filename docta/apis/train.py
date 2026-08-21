@@ -45,7 +45,7 @@ def test_model(cfg, model, dataset):
         else:
             labels = batch[1].to(cfg.device)
         # labels = batch[1][:, cfg.test_label_sel].to(cfg.device)
-        with torch.cuda.amp.autocast():
+        with torch.amp.autocast("cuda"):
             _, logits = model(features)
         prec = accuracy(logits, labels) 
         test_total += 1
@@ -72,7 +72,7 @@ def train_model(cfg, model, dataset, loss_func, test_dataset=None):
                 labels = batch[1][:, cfg.train_label_sel].to(cfg.device)
             else:
                 labels = batch[1].to(cfg.device)
-            with torch.cuda.amp.autocast():
+            with torch.amp.autocast("cuda"):
                 _, logits = model(features)
             prec = accuracy(logits, labels) 
             train_total += 1
