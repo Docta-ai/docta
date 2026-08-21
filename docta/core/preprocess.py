@@ -69,14 +69,14 @@ def extract_embedding_batch(cfg, encoder, batch_feature):
     try:
         encoder, tokenizer = encoder
         encoded_input = tokenizer(batch_feature).to(cfg.device)
-        with torch.no_grad(), torch.cuda.amp.autocast():
+        with torch.no_grad(), torch.amp.autocast("cuda"):
             model_output = encoder(**encoded_input)
         # Perform pooling
         sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
         # Normalize embeddings
         embedding = F.normalize(sentence_embeddings, p=2, dim=1)
     except: 
-        with torch.no_grad(), torch.cuda.amp.autocast():
+        with torch.no_grad(), torch.amp.autocast("cuda"):
             embedding = encoder(batch_feature.to(cfg.device))
     return embedding
 
